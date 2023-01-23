@@ -219,3 +219,67 @@ document.body.innerHTML = data
 `
   )
   .join("");
+
+//-----------------------------
+// Les Dates
+//-----------------------------
+
+//Date classique
+
+let date = new Date();
+
+// Timestamp
+let timestamp = Date.parse(date);
+
+console.log(timestamp);
+
+//IsoString
+let iso = date.toISOString();
+
+function dateParser(chaine) {
+  let newDate = new Date(chaine).toLocaleDateString("fr-FR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+  });
+  return newDate;
+}
+
+console.log(dateParser(date)); // retourne : 23 janvier 2023 à 22:47
+console.log(dateParser(timestamp)); // retourne : 23 janvier 2023 à 22:47
+
+//-----------------------------
+// Destructuring
+//-----------------------------
+
+let moreData = {
+  destVar: ["Element 1", "Element 2"],
+};
+
+const { destVar } = moreData;
+
+console.log(moreData.destVar); // EQUIVALENT - Affiche ['Element 1', 'Element 2']
+console.log(destVar); // EQUIVALENT - Affiche ['Element 1', 'Element 2']
+
+let array5 = [70, 80, 90];
+console.log(array5[0]);
+console.log(array5[1]);
+console.log(array5[2]);
+//EQUIVALENT ^^
+let [x, y, z] = array5;
+console.log(x);
+console.log(y);
+console.log(z);
+
+console.log(iso);
+
+const dateDestructuring = (chaine) => {
+  let newDate = chaine.split("T")[0];
+  console.log(newDate.split("-"));
+  //[y, m, d] = newDate
+  console.log(newDate);
+};
+
+console.log(dateDestructuring(iso));
