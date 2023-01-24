@@ -197,15 +197,15 @@ console.log(arrayNumber.filter((number) => number > 10).sort((a, b) => b - a));
 
 arrayNumber.map((number) => console.log(number));
 
-document.body.innerHTML = arrayNumber
+/*document.body.innerHTML = arrayNumber
   .map((number) => `<li> ${number}</li>`)
   .join("");
-
+*/
 //-----------------------------
 // Méthodes Objects
 //-----------------------------
 
-document.body.innerHTML = data
+/*document.body.innerHTML = data
   .filter((user) => user.admin === false)
   .filter((user) => user.pseudo.includes("i"))
   .sort((a, b) => b.age - a.age)
@@ -218,7 +218,7 @@ document.body.innerHTML = data
 </div>
 `
   )
-  .join("");
+  .join("");*/
 
 //-----------------------------
 // Les Dates
@@ -283,3 +283,38 @@ const dateDestructuring = (chaine) => {
 };
 
 console.log(dateDestructuring(iso));
+
+//-----------------------------
+// Les Datasets
+//-----------------------------
+
+const h3js = document.getElementById("javascript");
+//console.log(h3js.dataset.lang);
+
+const h3 = document.querySelectorAll("h3");
+//h3.forEach((language) => console.log(language.dataset.lang));
+
+//-----------------------------
+// Les Regex
+//-----------------------------
+
+let mail = "from_scratch33@gmail.com";
+//console.log(mail.search(/from/));
+
+//console.log(mail.replace(/from/, "de"));
+
+//console.log(mail.match(/SCratch/i));
+//console.log(mail.match(/[zug]/));
+//console.log(mail.match(/[123]/));
+
+//Tous les chiffres
+//console.log(mail.match(/\d/));
+
+//Matcher toutes les lettres
+//console.log(mail.match(/[a-z]/));
+
+//console.log(mail.match(/^[\w_-]+@[\w-]+\.[a-z]{2,4}$/i));
+
+let separator = 2655446121212;
+
+console.log(separator.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
